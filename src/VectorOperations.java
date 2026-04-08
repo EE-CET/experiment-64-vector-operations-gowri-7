@@ -6,23 +6,19 @@ public class VectorOperations {
         Scanner scanner = new Scanner(System.in);
         Vector<String> students = new Vector<>();
         
-        while (scanner.hasNextInt()) {
+        while (scanner.hasNext()) {
             int choice = scanner.nextInt();
             
-            if (choice == 5) {
-                break;
-            }
+            if (choice == 5) break;
             
             switch (choice) {
                 case 1:
-                    // Add name
                     String name1 = scanner.next();
                     students.add(name1);
                     System.out.println("Added");
                     break;
                     
                 case 2:
-                    // Insert at position (1-based → 0-based)
                     String name2 = scanner.next();
                     int index = scanner.nextInt();
                     students.add(index - 1, name2);
@@ -30,22 +26,17 @@ public class VectorOperations {
                     break;
                     
                 case 3:
-                    // Remove name
                     String name3 = scanner.next();
                     students.remove(name3);
                     System.out.println("Removed");
                     break;
                     
                 case 4:
-                    // Display vector
                     System.out.println(students);
                     break;
-                    
-                default:
-                    System.out.println("Invalid choice");
             }
         }
-        
         scanner.close();
     }
 }
+
